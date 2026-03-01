@@ -54,8 +54,8 @@ By the end of this workshop, you will have:
 
 ```bash
 # 1. Clone this repo
-git clone https://github.com/YOUR_USERNAME/k8s-beginners-workshop.git
-cd k8s-beginners-workshop
+git clone git clone https://github.com/faisalcodesinfrastructure/scale23x-k8s-workshop.git
+cd scale23x-k8s-workshop
 
 # 2. Create the KIND cluster
 kind create cluster --name workshop --config manifests/kind-config.yaml
@@ -97,7 +97,7 @@ k8s-workshop/
 
 ## 🙌 About
 
-Workshop presented at **SCaLE Linux Expo** by Faisal, a Principal Technical Consultant Lead **AHEAD**, specializing in cloud-native transformations, platform engineering, and enterprise architecture.
+Workshop presented at **SCaLE Linux Expo** by Faisal, a Principal Technical Consultant Lead at **AHEAD**, specializing in cloud-native transformations, platform engineering, and enterprise architecture.
 
 A [CNCF Ambassador](https://www.cncf.io/people/ambassadors/) and [Platform Engineering Ambassador](https://platformengineering.org/ambassador-program) and organizer of [Cloud Native LA](https://community.cncf.io/cloud-native-los-angeles/).
 

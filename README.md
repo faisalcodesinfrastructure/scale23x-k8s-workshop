@@ -11,8 +11,8 @@ By the end of this workshop, you will have:
 - ✅ A local Kubernetes cluster running with KIND
 - ✅ A real app deployed with Namespaces, Deployments, and Pods
 - ✅ A Service exposing your app inside the cluster
-- ✅ An NGINX Ingress routing external HTTP traffic
-- ✅ ConfigMaps and Secrets injected into your app
+- ✅ Traefik Ingress routing external HTTP traffic (installed via Helm)
+- ✅ ConfigMaps and Secrets injected into your app as env vars and mounted files
 - ✅ Horizontal scaling and zero-downtime rolling updates
 - ✅ A rollback strategy for bad deploys
 
@@ -28,12 +28,14 @@ By the end of this workshop, you will have:
 | 3 | [Namespaces — Organizing Your Cluster](modules/03-namespaces/README.md) | 10 min |
 | 4 | [Deployments — Running Your App](modules/04-deployments/README.md) | 25 min |
 | 5 | [Services — Internal Networking](modules/05-services/README.md) | 20 min |
-| 6 | [Ingress — External Traffic Routing](modules/06-ingress/README.md) | 25 min |
+| 6 | [Ingress — External Traffic Routing with Traefik](modules/06-ingress/README.md) | 25 min |
 | 7 | [ConfigMaps & Secrets](modules/07-configmaps-secrets/README.md) | 20 min |
 | 8 | [Scaling & Rolling Updates](modules/08-scaling-updates/README.md) | 20 min |
 | 9 | [Bonus: Troubleshooting & Tips](modules/09-bonus/README.md) | open |
 
 ---
+
+
 
 ## ⚙️ Prerequisites
 
@@ -42,6 +44,7 @@ By the end of this workshop, you will have:
 | Docker Desktop | v24+ | [docs.docker.com/get-docker](https://docs.docker.com/get-docker/) |
 | kind | v0.23+ | [kind.sigs.k8s.io](https://kind.sigs.k8s.io/) |
 | kubectl | v1.29+ | [kubernetes.io/docs/tasks/tools](https://kubernetes.io/docs/tasks/tools/) |
+| helm | v3.14+ | [helm.sh/docs/intro/install](https://helm.sh/docs/intro/install/) |
 
 > 💡 **New to the command line?** Check the [scripts/](scripts/) folder for helper shell scripts.
 

@@ -99,7 +99,7 @@ k8s-workshop/
 
 Workshop presented at **SCaLE Linux Expo** by Faisal, a Principal Technical Consultant Lead **AHEAD**, specializing in cloud-native transformations, platform engineering, and enterprise architecture.
 
-A [CNCF and Platform Engineering Ambassador](https://www.cncf.io/people/ambassadors/) (https://platformengineering.org/ambassador-program) and organizer of [Cloud Native LA](https://community.cncf.io/cloud-native-los-angeles/).
+A [CNCF Ambassador](https://www.cncf.io/people/ambassadors/) and [Platform Engineering Ambassador](https://platformengineering.org/ambassador-program) and organizer of [Cloud Native LA](https://community.cncf.io/cloud-native-los-angeles/).
 
 - 🐦 Questions? Open an [Issue](../../issues)
 - 💬 Join [CNCF Slack](https://slack.cncf.io/) — #kubernetes channel

@@ -82,11 +82,15 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```powershell
 winget install Helm.Helm
 ```
-
 Verify:
 ```bash
 helm version
 # version.BuildInfo{Version:"v3.x.x"...}
+```
+
+**Windows (WSL2):**
+```bash
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```
 
 ---
@@ -220,6 +224,15 @@ Verify:
 ping -c 1 demo.local
 # Should show: 127.0.0.1
 ```
+
+
+**Windows (WSL2):**
+```bash
+# Your browser runs on Windows, not inside WSL2.
+# Edit the Windows hosts file using the PowerShell block above,
+# then open http://demo.local in your normal Windows browser.
+```
+
 
 ---
 

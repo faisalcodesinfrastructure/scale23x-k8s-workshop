@@ -39,6 +39,30 @@ winget install Kubernetes.kubectl
 winget install Helm.Helm
 ```
 
+**Windows (WSL2):**
+```bash
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
+newgrp docker
+```
+```bash
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.23.0/kind-linux-amd64
+chmod +x ./kind && sudo mv ./kind /usr/local/bin/kind
+```
+```bash
+curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+```
+**Windows (WSL2):**
+```bash
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+```
+
+
+
+
+
+
 ## 2) Verify tooling
 
 ### Bash shells (macOS/Linux/WSL)

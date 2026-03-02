@@ -52,16 +52,87 @@ By the end of this workshop, you will have:
 
 ## 🚀 Quick Start
 
+### 1. Clone this repo
+
 ```bash
-# 1. Clone this repo
 git clone https://github.com/faisalcodesinfrastructure/scale23x-k8s-workshop.git
 cd scale23x-k8s-workshop
-
-# 2. Create the KIND cluster
-kind create cluster --name workshop --config manifests/kind-config.yaml
-
-# 3. Follow the modules in order
 ```
+
+### 2. Pre-pull images
+
+```bash
+docker pull kindest/node:v1.29.0
+docker pull traefik:v3.0
+```
+
+### 3. Create the KIND cluster
+
+```bash
+kind create cluster --name workshop --config manifests/kind-config.yaml
+kubectl config use-context kind-workshop
+kubectl wait --for=condition=Ready node --all --timeout=120s
+```
+
+### 4. Install Traefik Ingress Controller
+
+```bash
+helm repo add traefik https://traefik.github.io/charts
+helm repo update
+helm upgrade --install traefik traefik/traefik \
+  --namespace traefik \
+  --create-namespace \
+  -f manifests/traefik-values.yaml \
+  --wait
+```
+
+**PowerShell:**
+```powershell
+helm repo add traefik https://traefik.github.io/charts
+helm repo update
+helm upgrade --install traefik traefik/traefik `
+  --namespace traefik `
+  --create-namespace `
+  -f manifests/traefik-values.yaml `
+  --wait
+```
+
+### 5. Build and load the workshop app
+
+```bash
+docker build -t k8s-workshop-demo:1.0.0 ./app
+kind load docker-image k8s-workshop-demo:1.0.0 --name workshop
+```
+
+### 6. Apply all manifests
+
+```bash
+kubectl apply -f manifests/namespace.yaml
+kubectl apply -f manifests/configmap.yaml
+kubectl apply -f manifests/secret.yaml
+kubectl apply -f manifests/deployment.yaml
+kubectl apply -f manifests/service.yaml
+kubectl apply -f manifests/ingress.yaml
+kubectl rollout status deployment/demo-app -n workshop-app --timeout=120s
+```
+
+### 7. Add hosts file entry
+
+**macOS / Linux / WSL:**
+```bash
+echo '127.0.0.1 demo.local' | sudo tee -a /etc/hosts
+```
+
+**Windows (PowerShell as Administrator):**
+```powershell
+Add-Content -Path "$env:SystemRoot\System32\drivers\etc\hosts" -Value "127.0.0.1 demo.local"
+```
+
+### 8. Verify
+
+Open **http://demo.local** in your browser.
+
+### 9. Follow the modules in order
 
 ---
 
@@ -86,9 +157,9 @@ k8s-workshop/
 │   ├── 01-concepts/
 │   └── ...
 ├── scripts/                     ← Helper scripts
-│   ├── setup.sh
-│   ├── teardown.sh
-│   └── verify.sh
+│   ├── setup.sh / setup.ps1
+│   ├── teardown.sh / teardown.ps1
+│   └── verify.sh / verify.ps1
 └── docs/                        ← Extra reference material
     └── kubectl-cheatsheet.md
 ```

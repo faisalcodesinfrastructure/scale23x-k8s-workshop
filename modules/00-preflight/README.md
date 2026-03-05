@@ -8,6 +8,7 @@ Goal: Install tools, verify them, and pre-pull key images before the workshop.
 ### macOS
 
 ```bash
+brew install git
 brew install --cask docker
 brew install kind kubectl helm
 ```
@@ -15,6 +16,9 @@ brew install kind kubectl helm
 ### Linux
 
 ```bash
+
+sudo apt update && sudo apt install -y git
+
 curl -fsSL https://get.docker.com | sh
 sudo usermod -aG docker $USER
 newgrp docker
@@ -33,6 +37,7 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ### Windows (PowerShell)
 
 ```powershell
+winget install Git.Git
 winget install Docker.DockerDesktop
 winget install Kubernetes.kind
 winget install Kubernetes.kubectl
@@ -41,6 +46,7 @@ winget install Helm.Helm
 
 **Windows (WSL2):**
 ```bash
+sudo apt update && sudo apt install -y git
 curl -fsSL https://get.docker.com | sh
 sudo usermod -aG docker $USER
 newgrp docker
@@ -68,6 +74,7 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ### Bash shells (macOS/Linux/WSL)
 
 ```bash
+git --version
 docker --version
 kind --version
 kubectl version --client
@@ -78,6 +85,7 @@ docker info
 ### PowerShell
 
 ```powershell
+git --version
 docker --version
 kind --version
 kubectl version --client

@@ -7,10 +7,12 @@ Goal: Install tools, verify them, and pre-pull key images before the workshop.
 
 ### macOS
 
+# Replace {{USER.NAME}} with output from whoami
+
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo >> /Users/{{USER.NAME}}/.zprofile
-echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> /Users/[[USER.NAME]]/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> /Users/{{USER.NAME}}/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 brew install git
 brew install --cask docker
